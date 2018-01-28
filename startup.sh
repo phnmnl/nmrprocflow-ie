@@ -9,7 +9,7 @@ cp /apache.conf /etc/apache2/apache2.conf;
 
 # Launch traffic monitor which will automatically kill the container if
 # traffic stops
-/monitor_traffic.sh &
+# /monitor_traffic.sh &
 # And finally launch nginx in foreground mode. This will make debugging
 # easier as logs will be available from `docker logs ...`
 #nginx -g 'daemon off;'
