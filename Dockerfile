@@ -2,6 +2,12 @@ FROM nmrprocflow/nmrprocflow:v1.2.12
 
 LABEL maintainer="PhenoMeNal"
 
+RUN apt-get -qq update && \
+    apt-get install --no-install-recommends -y \
+    procps net-tools python-pip && \
+    pip install --upgrade pip && pip install setuptools && \
+    pip install bioblend==0.10 
+
 ENV DEBIAN_FRONTEND=noninteractive \
     API_KEY=none \
     DEBUG=false \
@@ -10,12 +16,6 @@ ENV DEBIAN_FRONTEND=noninteractive \
     GALAXY_WEB_PORT=10000 \
     HISTORY_ID=none \
     REMOTE_HOST=none
-
-RUN apt-get -qq update && \
-    apt-get install --no-install-recommends -y \
-    procps net-tools python-pip && \
-    pip install --upgrade pip && pip install setuptools && \
-    pip install bioblend==0.10 
 
 # Our very important scripts. Make sure you've run `chmod +x startup.sh
 # monitor_traffic.sh` outside of the container!
