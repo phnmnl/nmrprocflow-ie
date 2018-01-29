@@ -1,4 +1,4 @@
-FROM nmrprocflow/nmrprocflow:latest
+FROM nmrprocflow/nmrprocflow:v1.2.12
 
 LABEL maintainer="PhenoMeNal"
 
@@ -13,7 +13,7 @@ ENV DEBIAN_FRONTEND=noninteractive \
 
 RUN apt-get -qq update && \
     apt-get install --no-install-recommends -y \
-    wget procps net-tools python-pip && \
+    procps net-tools python-pip && \
     pip install --upgrade pip && pip install setuptools && \
     pip install bioblend==0.10 
 
