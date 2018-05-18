@@ -1,4 +1,4 @@
-FROM nmrprocflow/nmrprocflow:v1.2.12
+FROM nmrprocflow/nmrprocflow:latest
 
 LABEL maintainer="PhenoMeNal"
 
